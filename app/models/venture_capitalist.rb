@@ -18,14 +18,14 @@ class VentureCapitalist
   end
 
   def self.total_worth(name)
-    self.name(name).map{|vc| vc.total_worth}
+    self.name(name).map(&:total_worth)
   end
 
   def self.tres_commas_club
     @@all.select{|vc| vc.total_worth >= 1_000_000 }
   end
 
-  
+
 end
 
 #### Build out the following methods on the `VentureCapitalist` class
